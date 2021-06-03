@@ -121,68 +121,132 @@ class AddressBookContact
     {
         let nameRegex= RegExp('^[A-Z]{1}[a-z]{2,}');
         if (nameRegex.test(firstName))
-        this._firstName=firstName;
-        else throw 'Firstname is invalid';
+        {
+             this._firstName=firstName;
+        }       
+        else 
+        {
+            throw 'Firstname is invalid';
+        }
     }
     get lastName(){return this._lastName;}
     set (lastName)
     {
         let nameRegex= RegExp('^[A-Z]{1}[a-z]{2,}');
         if (nameRegex.test(lastName))
-        this._lastName=lastName;
-        else throw 'Lastname is invalid';
+        {
+            this._lastName=lastName;
+        }
+        else
+        { 
+            throw 'Lastname is invalid';
+        }
     }
     get address(){return this._address;}
     set(address)
     {
         let adRegex= RegExp('^[A-Z]{1}[a-z0-9]{3,}');
         if(adRegex.test(address))
-        this._address = address;
-        else throw 'Address is invalid';
+        {
+            this._address = address;
+        }        
+        else 
+        {
+            throw 'Address is invalid';
+        }
     }
     get city(){ return this._city;}
     set(city)
     {
         let cityRegex = RegExp('^[A-Z]{1}[a-z]{3,}');
         if(cityRegex.test(city))
-        this._city=city;
-        else throw 'City name is invalid';
+        {
+             this._city=city;
+        }
+        else
+        { 
+            throw 'City name is invalid';
+        }
     }
     get state(){return this._state;}
     set(state)
     {
         let stateRegex = RegExp('^[A-Z]{1}[a-z]{3,}');
         if(stateRegex.test(state))
-        this._state=state;
-        else throw 'State name is invalid';
+        {
+            this._state=state;
+        }
+        else
+        { 
+            throw 'State name is invalid';
+        }
     }
     get zip(){return this._zip;}
     set(zip)
     {
         let zipRegex = RegExp('^[0-9 ]{6}');
         if(zipRegex.test(zip))
-        this._zip=zip;
-        else throw 'Zip is invalid';
+        {
+            this._zip=zip;
+        }
+        else
+        {
+            throw 'Zip is invalid';
+
+        }
     }
     get phone(){return this._phone;}
     set(phone)
     {
         let phoneRegex = RegExp('^[0-9]{10}');
         if(phoneRegex.test(phone))
-        this._phone=phone;
-        else throw 'Phone number is invalid';
+        {
+            this._phone=phone;
+        }
+        else 
+        {
+            throw 'Phone number is invalid';
+        }
     }
     get email(){return this._email;}
     set(email)
     {
         let emailRegex = RegExp('^[a-zA-Z0-9]+([+-_.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]{2})*$');
         if(emailRegex.test(email))
-        this._email=email;
-        else throw 'Email pattern not valid';
+        {
+            this._email=email;
+        }
+        else 
+        {
+            throw 'Email pattern not valid';
+        }
     }
 
     toString()
     {
-        return "\nFirstName:"+this.firstName+" ,LastName:"+this.lastName+" ,Address:"+this.address+" ,City:"+this.city+" ,State:"+this.state+" Zip:"+this.zip+" ,Phone:"+this.phone+",Email:"+this.email;
+        return "\nFirstName:- "+this.firstName+" ,LastName:- "+this.lastName+" ,Address:- "+this.address+" ,City:- "+this.city+" ,State:- "+this.state+" Zip:- "+this.zip+" ,Phone:- "+this.phone+",Email:- "+this.email;
     }
 }
+/* UC3:- Ability to create a New Address Book array and add new Contacts to it */
+
+let addressArr = new Array();
+try
+{
+    let address1 = new AddressBookContact("Bishal","Pradhan","Patia","Bhuaneswar","Odisha",762012,9439666585,"pbishal@gmail.com");
+    let address2= new AddressBookContact("Niraj","Kumar","Kg","Bhubaneswar","Odisha",703020,9569855656,"nirk@gmail.com");  
+    addressArr.push(address1); //push record array
+    addressArr.push(address2);
+   
+    console.log(addressArr); //print
+}
+catch(ex)
+{
+    console.error(ex);
+}
+/* UC4:- Ability to find existing contact person using their name and edit it */
+function SearchName(addressbook)
+{
+    if(addressbook.firstName=="Omprakash") return addressbook;
+}
+let searchResult =addressArr.find(SearchName);
+console.log("Result after searching:-  "+searchResult);

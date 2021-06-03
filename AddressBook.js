@@ -307,3 +307,9 @@ console.log("People from the given city are: "+peopleFromCity);
         let addressCityMap= addressArr.map(ReturnCityMap);
         console.log("Viewing the people by their city")
         console.log(addressCityMap);
+
+/* UC10:- Ability to get number of contact persons i.e. count by City or State 
+          - Search Result will show count by city and by state
+          - Use Array Functions of filter, map, reduce, UC 10 etc to do the check */
+
+console.log("Number of people from that city is:- "+peopleFromCity.length);

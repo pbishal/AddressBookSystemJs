@@ -261,3 +261,15 @@ function DeleteAddress(addressbook)
 }
 let deleteIndex=addressArr.find(DeleteAddress);
 console.log(addressArr.splice(deleteIndex,1)+" is deleted")
+
+/* UC6:- Ability to find number of contacts in the address book - Use Reduce function to get the count  */
+let n=0;
+function GetTotal(a)
+{
+   if(a!=null)
+   {
+       ++n;
+   }
+   return n;
+}
+console.log("Total count of addresses:- "+addressArr.reduce(GetTotal,0));

@@ -273,3 +273,23 @@ function GetTotal(a)
    return n;
 }
 console.log("Total count of addresses:- "+addressArr.reduce(GetTotal,0));
+
+/*UC7:- Ability to ensure there is no Duplicate Entry of the same Person in the Address Book.
+        - Duplicate Check is done on Person Name before adding person to Address Book. 
+        - Use Array Functions of filter, map, reduce, etc to do the check. 
+*/
+function CheckDuplicate(a)
+{
+    if(a.firstName.includes("Om"))
+    ++n;
+return n;
+}
+let count = addressArr.filter(CheckDuplicate);
+if(count=1)
+{
+    console.log("There is no duplicate entry for the name");
+}
+else if(count>1)
+{
+    console.log("There is duplicate entry for the given name")
+}

@@ -297,3 +297,13 @@ else if(count>1)
 /*UC8:- Ability to search Person in a particular City or State - Use Array Functions of filter, map, reduce, etc to do the check. */
 let peopleFromCity=addressArr.filter(a=>a.city.includes("Pune"));
 console.log("People from the given city are: "+peopleFromCity);
+
+/* UC9:- Ability to view Persons by City or State 
+         - Use Array Functions of filter, map, reduce, etc to do the check */
+
+         function ReturnCityMap(a){
+            return a.city+ "->"+a.firstName;
+        }
+        let addressCityMap= addressArr.map(ReturnCityMap);
+        console.log("Viewing the people by their city")
+        console.log(addressCityMap);

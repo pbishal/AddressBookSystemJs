@@ -293,3 +293,7 @@ else if(count>1)
 {
     console.log("There is duplicate entry for the given name")
 }
+
+/*UC8:- Ability to search Person in a particular City or State - Use Array Functions of filter, map, reduce, etc to do the check. */
+let peopleFromCity=addressArr.filter(a=>a.city.includes("Pune"));
+console.log("People from the given city are: "+peopleFromCity);

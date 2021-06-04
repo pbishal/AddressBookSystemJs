@@ -246,7 +246,7 @@ catch(ex)
 /* UC4:- Ability to find existing contact person using their name and edit it */
 function SearchName(addressbook)
 {
-    if(addressbook.firstName=="Omprakash") return addressbook;
+    if(addressbook.firstName=="Bishal") return addressbook;
 }
 let searchResult =addressArr.find(SearchName);
 console.log("Result after searching:-  "+searchResult);
@@ -280,7 +280,7 @@ console.log("Total count of addresses:- "+addressArr.reduce(GetTotal,0));
 */
 function CheckDuplicate(a)
 {
-    if(a.firstName.includes("Om"))
+    if(a.firstName.includes("Niraj"))
     ++n;
 return n;
 }
@@ -295,7 +295,7 @@ else if(count>1)
 }
 
 /*UC8:- Ability to search Person in a particular City or State - Use Array Functions of filter, map, reduce, etc to do the check. */
-let peopleFromCity=addressArr.filter(a=>a.city.includes("Pune"));
+let peopleFromCity=addressArr.filter(a=>a.city.includes("Bhubaneswar"));
 console.log("People from the given city are: "+peopleFromCity);
 
 /* UC9:- Ability to view Persons by City or State 
